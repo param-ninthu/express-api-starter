@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const api = require('./api');
+const register = require('./api/register');
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use('/api/v1/register', register);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
